@@ -39,7 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     #apps
-    'apps.endpoints'
+    'apps.endpoints',
+    'apps.ml'
 ]
 
 MIDDLEWARE = [
@@ -86,9 +87,15 @@ WSGI_APPLICATION = 'server.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'OPTIONS': {
-            'read_default_file': '/etc/mysql/my.cnf',
+        'NAME': 'first_db',
+        'USERNAME': 'vishal',
+        'PASSWORD': 'vishal@7',
+        'TEST': {
+            'NAME':'test_first_db',
         },
+        #'OPTIONS': {
+        #    'read_default_file': '/etc/mysql/my.cnf',
+        #},
     }
 }
 
